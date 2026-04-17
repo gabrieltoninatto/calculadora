@@ -19,5 +19,6 @@ void main() {
 void multiplicacao() {
     print(numeroUm * numeroDois);
   }
+
   multiplicacao();
 }
