@@ -4,6 +4,7 @@ void main() {
   double numeroUm = 0;
   double numeroDois = 0;
   String operacao = "";
+  List<String> operacoes = <String>["+", "-", "*", "/"];
 
   void soma() {
     print(numeroUm + numeroDois);
@@ -48,6 +49,14 @@ void multiplicacao() {
       numeroUm = double.parse(entrada);
     }
   }
+
+    void getOperacao() {
+      print("Digite uma operação válida (+, -, *, /):");
+      entrada = stdin.readLineSync();
+      if (entrada != null) {
+        if (operacoes.contains(entrada)) {
+      }
+    }
 
   print("Digite a operação desejada (+, -, *, /):");
 
