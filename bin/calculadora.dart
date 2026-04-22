@@ -23,18 +23,21 @@ void multiplicacao() {
 
   if (operacao == "+") {
     soma();
-  }
+  } else {
+    if (operacao == "-") {
+      subtracao();
+    } else {
+      if (operacao == "*") {
+        multiplicacao();
+      } else {
+        if (operacao == "/") {
+          divisao();
+        }
+       }
+      }
+    }
+  
 
-  if (operacao == "-") {
-    subtracao();
-  }
 
-  if (operacao == "/") {
-    divisao();
-  }
-
-  if (operacao == "*") {
-    multiplicacao();
-  }
-
+ 
 }
