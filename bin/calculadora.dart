@@ -35,6 +35,21 @@ void multiplicacao() {
         }
        }
       }
+
+      switch (operacao) {
+        case "+":
+        soma();
+
+        case "-":
+        subtracao();
+
+        case "*":
+        multiplicacao();
+
+        case "/":
+        divisao();
+        break;
+      }
     }
   
 
