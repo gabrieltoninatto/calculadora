@@ -43,12 +43,14 @@ void main() {
   }
 
   void getOperacao() {
-    print('Digite uma operacao valida (+, -, *, /):');
+    print("Digite uma operacao valida ${operacoes.toString()}");
     entrada = stdin.readLineSync();
     if (entrada != null) {
-
       if (operacoes.contains(entrada)) {
         operacao = entrada!;
+      } else {
+        print('Operacao invalida, tente novamente.');
+        getOperacao();
       }
     }
   }
