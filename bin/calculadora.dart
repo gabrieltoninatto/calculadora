@@ -4,7 +4,8 @@ void main() {
   double numeroUm = 0;
   double numeroDois = 0;
   String operacao = "";
-  List<String> operacoes = <String>["+", "-", "*", "/"];
+  String? entrada = "";
+  List<String> operacoes = <String>['+', '-', '*', '/'];
 
   void soma() {
     print(numeroUm + numeroDois);
@@ -18,67 +19,57 @@ void main() {
     print(numeroUm / numeroDois);
   }
 
-void multiplicacao() {
+  void multiplicacao() {
     print(numeroUm * numeroDois);
   }
 
-    void calcular() {
-  
+  void calcular() {
     switch (operacao) {
-      case "+":
+      case '+':
         soma();
-
-      case "-":
+        break;
+      case '-':
         subtracao();
-
-      case "*":
+        break;
+      case '*':
         multiplicacao();
-
-      case "/":
+        break;
+      case '/':
         divisao();
         break;
-      }
-    }
-
- print("Digite o primeiro número:");
-
- String? entrada = stdin.readLineSync();
-
-  if (entrada != null) {
-    if (entrada != "") {
-      numeroUm = double.parse(entrada);
+      default:
+        print('Operacao invalida.');
     }
   }
 
-    void getOperacao() {
-      print("Digite uma operação válida (+, -, *, /):");
-      entrada = stdin.readLineSync();
-      if (entrada != null) {
-        if (operacoes.contains(entrada)) {
+  void getOperacao() {
+    print('Digite uma operacao valida (+, -, *, /):');
+    entrada = stdin.readLineSync();
+    if (entrada != null) {
+
+      if (operacoes.contains(entrada)) {
+        operacao = entrada!;
       }
-    }
-
-  print("Digite a operação desejada (+, -, *, /):");
-
-  entrada = stdin.readLineSync();
-  if (entrada != null) {
-    operacao = entrada;
-    }
-
-  print("Digite o segundo número:");
-
-  entrada = stdin.readLineSync();
-  if (entrada != null) {
-    if (entrada != "") {
-      numeroDois = double.parse(entrada);
     }
   }
 
-  print("O resultado da operação é:");
 
+  print('Digite o primeiro numero:');
+  entrada = stdin.readLineSync();
+
+  if (entrada != null && entrada != '') {
+    numeroUm = double.parse(entrada!);
+  }
+
+  getOperacao();
+
+  print('Digite o segundo numero:');
+  entrada = stdin.readLineSync();
+
+  if (entrada != null && entrada != '') {
+    numeroDois = double.parse(entrada!);
+  }
+
+  print('O resultado da operacao e:');
   calcular();
 }
-
-
- 
-
