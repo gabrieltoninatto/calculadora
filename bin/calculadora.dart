@@ -21,6 +21,26 @@ void multiplicacao() {
     print(numeroUm * numeroDois);
   }
 
+    void calcular() {
+  
+    switch (operacao) {
+      case "+":
+        soma();
+
+      case "-":
+        subtracao();
+
+      case "*":
+        multiplicacao();
+
+      case "/":
+        divisao();
+        break;
+      }
+    }
+
+ print("Digite o primeiro número:");
+
  String? entrada = stdin.readLineSync();
 
   if (entrada != null) {
@@ -29,35 +49,26 @@ void multiplicacao() {
     }
   }
 
+  print("Digite a operação desejada (+, -, *, /):");
+
+  entrada = stdin.readLineSync();
+  if (entrada != null) {
+    operacao = entrada;
+    }
+
+  print("Digite o segundo número:");
+
   entrada = stdin.readLineSync();
   if (entrada != null) {
     if (entrada != "") {
       numeroDois = double.parse(entrada);
     }
   }
-    entrada = stdin.readLineSync();
-  if (entrada != null) {
-    if (entrada != "") {
-    operacao = entrada;
-    }
-  }
-  
-      switch (operacao) {
-        case "+":
-        soma();
 
-        case "-":
-        subtracao();
+  print("O resultado da operação é:");
 
-        case "*":
-        multiplicacao();
-
-        case "/":
-        divisao();
-        break;
-      }
-    }
-  
+  calcular();
+}
 
 
  
